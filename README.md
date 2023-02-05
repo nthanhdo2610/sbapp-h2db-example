@@ -1,1 +1,1 @@
-# sbapp-h2db-example
+# springboot-jpa-crud-example
