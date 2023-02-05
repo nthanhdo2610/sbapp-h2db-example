@@ -1,5 +1,6 @@
 package com.ntd.sbapph2db.model;
 
+import com.ntd.sbapph2db.payload.EmployeePayload;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -29,4 +30,10 @@ public class Employee {
     private String lastName;
     @Column(name = "email_address", nullable = false)
     private String email;
+
+    public Employee(EmployeePayload payload) {
+        this.firstName = payload.firstName();
+        this.lastName = payload.lastName();
+        this.email = payload.email();
+    }
 }

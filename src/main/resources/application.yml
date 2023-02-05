@@ -1,3 +1,8 @@
+server:
+  servlet:
+    context-path: /sbapp-h2
+  port: 8080
+
 
 spring:
   datasource:
@@ -7,3 +12,5 @@ spring:
     password: 12345
   jpa:
     database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: update
