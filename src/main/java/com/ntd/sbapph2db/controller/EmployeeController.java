@@ -36,7 +36,7 @@ public class EmployeeController {
 
     @GetMapping("/{id}")
     public ResponseEntity<EmployeeDto> getEmployeeById(@PathVariable(value = "id") Long employeeId) {
-        final Employee emp = employeeRepository.findById(employeeId).orElseThrow(()-> new ResourceNotFoundException("Employee not found!"));
+        final Employee emp = employeeRepository.findById(employeeId).orElseThrow(() -> new ResourceNotFoundException("Employee not found!"));
         return ResponseEntity.ok(new EmployeeDto(emp));
     }
 
@@ -49,7 +49,7 @@ public class EmployeeController {
     @PutMapping("/{id}")
     public ResponseEntity<EmployeeDto> updateEmployee(@PathVariable(value = "id") Long employeeId,
                                                       @Validated @RequestBody EmployeePayload payload) {
-        Employee employee = employeeRepository.findById(employeeId).orElseThrow(()-> new ResourceNotFoundException("Employee not found!"));
+        Employee employee = employeeRepository.findById(employeeId).orElseThrow(() -> new ResourceNotFoundException("Employee not found!"));
         employee.setEmail(payload.email());
         employee.setLastName(payload.lastName());
         employee.setFirstName(payload.firstName());
@@ -59,7 +59,7 @@ public class EmployeeController {
 
     @DeleteMapping("/{id}")
     public ResponseEntity<?> deleteEmployee(@PathVariable(value = "id") Long employeeId) {
-        employeeRepository.deleteById(employeeRepository.findById(employeeId).orElseThrow(()-> new ResourceNotFoundException("Employee not found!")).getId());
+        employeeRepository.deleteById(employeeRepository.findById(employeeId).orElseThrow(() -> new ResourceNotFoundException("Employee not found!")).getId());
         return ResponseEntity.ok().build();
     }
 }
