@@ -1,4 +1,4 @@
-# springboot-jpa-crud-example
+# springboot-jpa-crud-example-with-H2
 <p>H2 is a open source, compact relational database, written in Java language. 
 H2 installer has very little capacity of about 8MB.
 One of the interesting features of the H2 is that you can create an In-Memory Database instead of being stored in a computer hard drive. 
